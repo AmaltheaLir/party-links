@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Party!</title>
+
+  <link href="<%= url('/styles/styler.css') %>" rel="stylesheet" type="text/css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<h1>Party!</h1>
+
+<h2>Guest List</h2>
+
+<strong>We're already <%= @guests.size %> people!</strong>
+
+<br>
+
+
+<br>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Friends
+      </th>
+      <th>
+        Arrive
+      </th>
+      <th>
+        Social
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @guests.each do |row| %>
+    <tr>
+      <td>
+      <%= row.name %> 
+      </td>
+      <td class="friend">
+      <%= row.number_of_friends %>
+      </td>
+      <td class="friend">
+      <%= row.time_of_arrival %>
+      </td>
+      <td>
+      <%= row.social %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<!--<div>
+  <img src="\party-hard.gif" alt="party fun" style="width:50%;height:50%;">
+</div> -->
+
+<br>
+
+<h2>Sign up for the party!</h2>
+
+<form action="/party/guests" method="POST">
+  <p>
+    <label>Name:
+      <input type="text" name="guest_name" placeholder="John Doe" />
+    </label>
+  </p>
+
+  <p>
+    <label>Number of friends:
+      <input type="text" name="guest_number_of_friends" placeholder="1, 2, 3" />
+    </label>
+  </p>
+
+  <p>
+    <label>Time of arrival:
+      <input type="text" name="guest_time_of_arrival" placeholder="20:00" />
+    </label>
+  </p>
+
+    <p>
+    <label>Social Link:
+      <input type="text" name="social" placeholder="@doodledoo" />
+    </label>
+  </p>
+
+  <p>
+    <input type="submit" name="submit" value="Sign up!" />
+  </p>
+</form>
+<br>
+
+</body>
+</html>
