@@ -54,8 +54,8 @@
       <td class="friend">
       <%= row.time_of_arrival %>
       </td>
-      <td>
-      <%= row.social %>
+      <td><a href="<%= row.social %>"><%= row.social %></a>
+      
       </td>
     </tr>
     <% end %>
@@ -93,7 +93,7 @@
 
     <p>
     <label>Social Link:
-      <input type="text" name="social" placeholder="@doodledoo" />
+      <input type="url" name="social" placeholder="@doodledoo" />
     </label>
   </p>
 

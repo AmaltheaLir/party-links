@@ -14,7 +14,7 @@ class Guest
   end
 
   def self.load_guests
-    CSV.read(CSV_FILE_NAME, headers: true, liberal_parsing: true, quote_empty: true).map do |guest_line|
+    CSV.read(CSV_FILE_NAME, headers: true, liberal_parsing: true, quote_empty: true, encoding: "bom|utf-8").map do |guest_line|
       Guest.new(
         guest_line[0],
         guest_line[1],
