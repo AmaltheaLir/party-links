@@ -4,17 +4,33 @@ body {
   background-color: rgb(193, 230, 247);
 }
 
-table, th, td {
-  border: 1px solid rgb(15, 6, 144);
-}
-
 table {
   border-collapse: collapse;
   width: 400px;
+  border-radius: 10px;
 }
 
-th, td {
-  padding: 15px;
+#ppl th, td {
+  border: 3px solid rgb(193, 230, 247);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#ppl tr:nth-child(even){
+  background-color: #95adf1;
+}
+
+tbody tr:nth-child(odd){
+  background-color: #c5d2f5;
+}
+
+tr:hover {
+  background-color: #d5d5da;
+}
+
+#ppl thead {
+  background-color: darkviolet;
+  color: aliceblue;
 }
 
 .friend {
