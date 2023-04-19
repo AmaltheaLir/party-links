@@ -8,19 +8,18 @@ GEM
     puma (6.2.1)
       nio4r (~> 2.0)
     rack (2.2.6.4)
-    rack-protection (3.0.5)
+    rack-protection (3.0.6)
       rack
     ruby2_keywords (0.0.5)
-    sinatra (3.0.5)
+    sinatra (3.0.6)
       mustermann (~> 3.0)
       rack (~> 2.2, >= 2.2.4)
-      rack-protection (= 3.0.5)
+      rack-protection (= 3.0.6)
       tilt (~> 2.0)
     tilt (2.1.0)
 
 PLATFORMS
-  ruby
-  x64-mingw32
+  x64-mingw-ucrt
 
 DEPENDENCIES
   byebug
@@ -28,4 +27,4 @@ DEPENDENCIES
   sinatra
 
 BUNDLED WITH
-   1.10.6
+   2.4.10
