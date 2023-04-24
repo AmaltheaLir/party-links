@@ -10,108 +10,112 @@
 
 
 </head>
-
 <body>
 
-<h1>Party!</h1>
+  <h1>Party!</h1>
 
-<h2>Guest List</h2>
+  <hr style="margin-inline-start: 0;width: 150px;">
+  
+  <h2>--Guest List--</h2>
 
-<br>
+  <hr style="margin-inline-start: 0;width: 500px;">
 
-<strong>We're already <%= @guests.size %> people!</strong>
-<% if @guests.empty? %><p> nope </p>
-<img src="https://i.giphy.com/media/Y2iqFF4t0Qdzi/giphy.webp" alt="sulking">
-<% end %>
+  <strong>There are <%= @guests.size %> of us! </strong>
+  <% if @guests.empty? %><p> Be the first to sign up! </p>
+  <img src="https://i.giphy.com/media/Y2iqFF4t0Qdzi/giphy.webp" alt="sulking">
+  <% end %>
 
-<% if @guests.size > 9 %><p> Sorry, we only have enough space for <%= @guests.size %> people, sign-ups are closed! :(</p>
-<img src="\sardines.jpg" alt="sardines" style="max-width: 70%; border-radius: 50%;">
-<% end %>
+  <% if @guests.size > 9 %><p> Sorry, we only have enough space for <%= @guests.size %> registrants, sign-ups are closed! :(</p>
+  <img src="\sardines.jpg" alt="sardines" style="max-width: 70%; border-radius: 50%;">
+  <% end %>
 
+  <br>
 
-<br>
+  <% if @guests.size > 0 %>
+    <table id="ppl">
+      <thead>
+        <tr>
+          <th>
+            Name
+          </th>
+          <th>
+            Friends
+          </th>
+          <th>
+            Arrive
+          </th>
+          <th>
+            Website
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @guests.each do |row| %>
+        <tr>
+          <td>
+          <%= row.name %> 
+          </td>
+          <td class="friend">
+          <%= row.number_of_friends %>
+          </td>
+          <td class="friend">
+          <%= row.time_of_arrival %>
+          </td>
+          <td><a href="<%= row.social %>"><%= row.social %></a>
+          
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
 
+  <br>
 
-<br>
+  <% if @guests.size > 9 %>
+    <div>
+      <img src="\party-hard.gif" alt="party fun" style="width:50%;height:50%;">
+    </div>
+  <% end %>
 
+  <br>
 
-<table id="ppl">
-  <thead>
-    <tr>
-      <th>
-        Name
-      </th>
-      <th>
-        Friends
-      </th>
-      <th>
-        Arrive
-      </th>
-      <th>
-        Website
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @guests.each do |row| %>
-    <tr>
-      <td>
-      <%= row.name %> 
-      </td>
-      <td class="friend">
-      <%= row.number_of_friends %>
-      </td>
-      <td class="friend">
-      <%= row.time_of_arrival %>
-      </td>
-      <td><a href="<%= row.social %>"><%= row.social %></a>
-      
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% if @guests.size < 10 %>
+    <h2>Sign up for the party!</h2>
 
-<br>
+    <form action="/party/guests" method="POST">
+      <p>
+        <label>Name:
+          <input type="text" name="guest_name" placeholder="Jane Eyre" />
+        </label>
+      </p>
 
-<!--<div>
-  <img src="\party-hard.gif" alt="party fun" style="width:50%;height:50%;">
-</div> -->
+      <p>
+        <label>Number of friends:
+          <input type="text" name="guest_number_of_friends" placeholder="1, 2, 3" />
+        </label>
+      </p>
 
-<br>
+      <p>
+        <label>Time of arrival:
+          <input type="text" name="guest_time_of_arrival" placeholder="20:00" />
+        </label>
+      </p>
 
-<h2>Sign up for the party!</h2>
+      <p>
+        <label>Social Link:
+          <input type="url" name="social" placeholder="www.doodledoo.woo" />
+        </label>
+      </p>
 
-<form action="/party/guests" method="POST">
-  <p>
-    <label>Name:
-      <input type="text" name="guest_name" placeholder="Jane Eyre" />
-    </label>
-  </p>
+      <p>
+        <input type="submit" name="submit" value="Sign up!" />
+      </p>
+    </form>
+  <% end %>
 
-  <p>
-    <label>Number of friends:
-      <input type="text" name="guest_number_of_friends" placeholder="1, 2, 3" />
-    </label>
-  </p>
-
-  <p>
-    <label>Time of arrival:
-      <input type="text" name="guest_time_of_arrival" placeholder="20:00" />
-    </label>
-  </p>
-
-    <p>
-    <label>Social Link:
-      <input type="url" name="social" placeholder="www.doodledoo.woo" />
-    </label>
-  </p>
-
-  <p>
-    <input type="submit" name="submit" value="Sign up!" />
-  </p>
-</form>
-<br>
+  <hr style="margin-inline-start: 0;width: 500px;">
+  <br>
 
 </body>
 </html>
