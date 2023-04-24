@@ -17,17 +17,19 @@
 
 <h2>Guest List</h2>
 
-
-<p> Is this where the conditional erb needs to go?</p>
-
-
-
-<strong>We're already <%= @guests.size %> people!</strong>
-
 <br>
 
+<strong>We're already <%= @guests.size %> people!</strong>
+<% if @guests.empty? %><p> nope </p>
 <img src="https://i.giphy.com/media/Y2iqFF4t0Qdzi/giphy.webp" alt="sulking">
+<% end %>
 
+<% if @guests.size > 9 %><p> Sorry, we only have enough space for <%= @guests.size %> people, sign-ups are closed! :(</p>
+<img src="\sardines.jpg" alt="sardines" style="max-width: 70%; border-radius: 50%;">
+<% end %>
+
+
+<br>
 
 
 <br>
@@ -46,7 +48,7 @@
         Arrive
       </th>
       <th>
-        Social
+        Website
       </th>
     </tr>
   </thead>
@@ -83,7 +85,7 @@
 <form action="/party/guests" method="POST">
   <p>
     <label>Name:
-      <input type="text" name="guest_name" placeholder="John Doe" />
+      <input type="text" name="guest_name" placeholder="Jane Eyre" />
     </label>
   </p>
 
@@ -101,7 +103,7 @@
 
     <p>
     <label>Social Link:
-      <input type="url" name="social" placeholder="@doodledoo" />
+      <input type="url" name="social" placeholder="www.doodledoo.woo" />
     </label>
   </p>
 

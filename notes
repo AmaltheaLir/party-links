@@ -10,6 +10,9 @@ https://rubymonstas.ch/materials/canonical/session22/session22-exercises.pdf
 Slides: https://rubymonstas.ch/materials/canonical/session22/session22-slides.pdf
 
 
+
+
+
 populated guests before i had to delete them  
 
 name,number_of_friends,time_of_arrival,social
@@ -19,7 +22,7 @@ Luna,1,21:15,https://map.geo.admin.ch
 Corvette,0,20:25,https://map.geo.admin.ch
 Bernadette,2,20:00,https://ridgewoodhistoricalsociety.org/about-us/
 Castle Ghost,0,24:00,https://www.museumaargau.ch/schloss-habsburg
-Nobody,0,20:00,""
+
 
 
 
