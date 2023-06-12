@@ -12,15 +12,19 @@
 </head>
 <body>
 
-  <h1>Party!</h1>
+  <h1>We are Having a Party!</h1>
 
   <hr style="margin-inline-start: 0;width: 150px;">
   
   <h2>--Guest List--</h2>
 
   <hr style="margin-inline-start: 0;width: 500px;">
+  <br>
+  <p>Don't be lame, sign up and Join Us!</p>
+  <br>
+  <strong>We are <%= @guests.size %> of us! </strong>
+  <br>
 
-  <strong>There are <%= @guests.size %> of us! </strong>
   <% if @guests.empty? %><p> Be the first to sign up! </p>
   <img src="https://i.giphy.com/media/Y2iqFF4t0Qdzi/giphy.webp" alt="sulking">
   <% end %>
@@ -32,7 +36,7 @@
   <br>
 
   <% if @guests.size > 0 %>
-    <table id="ppl">
+    <table class="party-guests" id="ppl">
       <thead>
         <tr>
           <th>

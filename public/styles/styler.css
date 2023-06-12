@@ -6,8 +6,11 @@ body {
 
 table {
   border-collapse: collapse;
-  width: 400px;
   border-radius: 10px;
+}
+
+table.party-guests {
+  width: 400px;
 }
 
 #ppl th, td {

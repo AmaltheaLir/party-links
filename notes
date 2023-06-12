@@ -1,6 +1,4 @@
-Next : optional things! 
--When list empty, show some sort of text "no one has signed up yet!" etc
-,,, some sort of conditional, for when there are no values beyond the header in th csv, that it should puts "text and a gif". but WHERE??!!!!  8/
+Next : practice the erb by making more things. added a few things past the assignment already. working. 
 
 There is a general kerfluffel with the ssthingnum. connecting my GH web to my GH local. urghhhhhh Have to figure out. ded.
 
@@ -22,7 +20,8 @@ Luna,1,21:15,https://map.geo.admin.ch
 Corvette,0,20:25,https://map.geo.admin.ch
 Bernadette,2,20:00,https://ridgewoodhistoricalsociety.org/about-us/
 Castle Ghost,0,24:00,https://www.museumaargau.ch/schloss-habsburg
-
+Castle Ghost,0,24:00,https://www.museumaargau.ch/schloss-habsburg
+Castle Ghost,0,24:00,https://www.museumaargau.ch/schloss-habsburg
 
 
 
